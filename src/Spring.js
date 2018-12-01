@@ -142,7 +142,7 @@ export default class Spring extends React.Component {
     // Render out raw values or AnimatedValues depending on "native"
     let values = { ...this.controller.getValues(), ...this.afterInject }
     if (this.finished) values = { ...values, ...this.props.after }
-    return values && Object.keys(values).length ? children(values) : null
+    return children(values)
   }
 
   componentDidUpdate() {

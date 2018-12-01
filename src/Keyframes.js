@@ -17,7 +17,9 @@ class KeyframesImpl extends React.PureComponent {
 
   guid = 0
   state = {
-    props: {},
+    props: {
+      to: this.props.from || {},
+    },
     oldProps: {},
     resolve: () => null,
     last: true,
@@ -95,8 +97,6 @@ class KeyframesImpl extends React.PureComponent {
 
   render() {
     const { props, oldProps, resolve, last, index } = this.state
-
-    if (!props || Object.keys(props).length === 0) return null
 
     let {
       state,
